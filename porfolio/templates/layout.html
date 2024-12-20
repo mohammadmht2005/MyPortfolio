@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <title>Mohammad's portfolio</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top" id="base-nav">
+            <div class="container-fluid">
+                <font><font style="color:rgba(7, 118, 228, 1);" class="fw-bold" id="first">< </font><font class="logo fw-semibold">Mohammad</font><font style="color:rgba(7, 118, 228, 1);" class="fw-bold" id="scnd"> ></font></font>
+                <div class="dropdown">
+                    <button class="btn btn-link p-0" style="text-decoration: none !important;" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false" onclick="toggleHamburger()">
+                        <i class="bi bi-list" id="hamburger-icon" style="color: rgba(7, 118, 228, 1);margin: 4px;"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item fw-semibold" href="#about_me" style="text-decoration: none !important;"><i class="bi bi-question-circle"></i>  About Me</a></li>
+                        <li><a class="dropdown-item fw-semibold" href="#skills" style="text-decoration: none !important;"><i class="bi bi-lightbulb"></i>  My Skills</a></li>
+                        <li><a class="dropdown-item fw-semibold" href="#hire_me" style="text-decoration: none !important;"><i class="bi bi-person-bounding-box"></i>  Hire Me</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script>
+            function toggleHamburger() {
+                const icon = document.getElementById('hamburger-icon');
+                icon.classList.toggle('bi-list');
+                icon.classList.toggle('bi-x');
+                icon.classList.toggle('animate-hamburger');
+            }
+        </script>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
